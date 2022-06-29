@@ -1,0 +1,15 @@
+{
+  "name": "na-hana-backend",
+  "version": "1.0.0",
+  "description": "node.js graphql service for na-hana",
+  "main": "index.js",
+  "scripts": {
+    "start":  "node src/index.js"
+  },
+  "author": "Mirko tom-Have",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^3.9.0",
+    "graphql": "^16.5.0"
+  }
+}
