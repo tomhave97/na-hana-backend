@@ -4,12 +4,16 @@
   "description": "node.js graphql service for na-hana",
   "main": "index.js",
   "scripts": {
-    "start":  "node src/index.js"
+    "start": "node src/index.js"
   },
   "author": "Mirko tom-Have",
   "license": "MIT",
   "dependencies": {
+    "@prisma/client": "^4.0.0",
     "apollo-server": "^3.9.0",
     "graphql": "^16.5.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.0.0"
   }
 }

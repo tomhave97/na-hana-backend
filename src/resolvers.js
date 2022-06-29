@@ -1,4 +1,4 @@
-const { tasks } =  require('./database.js');
+const { prisma } =  require('./database.js');
 
 const resolvers = {
 
@@ -10,22 +10,23 @@ const resolvers = {
 
     Query: {
         tasks: (parent) => {
-            return tasks
+            return prisma.task.findMany()
         },
         task: (parent, args) => {
-            return tasks.find((task) => task.id === Number(args.id))
+            return prisma.task.findFirst({
+                where: { id: Number(args.id) }
+            })
         },
     },
 
     Mutation: {
         addTask: (parent, args) => {
-            tasks.push({
-                id: tasks.length + 1,
-                name: args.name,
-                status: args.status,
+            return prisma.task.create({
+                data: {
+                    name: args.name,
+                    status: args.status,
+                }
             })
-
-            return tasks[tasks.length - 1]
         },
     },
 }

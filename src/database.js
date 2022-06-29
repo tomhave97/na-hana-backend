@@ -1,21 +1,7 @@
-const tasks = [
-    {
-        id: 1,
-        name: 'Aufgabe 1',
-        status: "todo",
-    },
-    {
-        id: 2,
-        name: 'Aufgabe 2',
-        status: "todo",
-    },
-    {
-        id: 3,
-        name: 'done',
-        status: "done"
-    },
-]
+const { PrismaClient } = require('@prisma/client')
+
+const prisma = new PrismaClient();
 
 module.exports = {
-    tasks,
+    prisma,
 }
